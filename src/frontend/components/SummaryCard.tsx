@@ -49,12 +49,12 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
 
   return (
     <div className={`card card-hover ${colorClasses[actualColor]} ${className} animate-fade-in`}>
-      <div className="flex items-start justify-between mb-4">
-        <h3 className={`text-lg font-semibold ${textColorClasses[actualColor]}`}>
+      <div className="flex items-start justify-between mb-3 sm:mb-4">
+        <h3 className={`text-base sm:text-lg font-semibold ${textColorClasses[actualColor]}`}>
           {title}
         </h3>
         {score !== undefined && (
-          <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+          <div className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
             actualColor === 'success' ? 'bg-green-100 text-green-800' :
             actualColor === 'warning' ? 'bg-yellow-100 text-yellow-800' :
             'bg-red-100 text-red-800'
@@ -64,19 +64,19 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
         )}
       </div>
       
-      <div className="mb-3">
-        <div className={`text-3xl font-bold ${textColorClasses[actualColor]} mb-1`}>
+      <div className="mb-2 sm:mb-3">
+        <div className={`text-2xl sm:text-3xl font-bold ${textColorClasses[actualColor]} mb-1`}>
           {value}
         </div>
         {subtitle && (
-          <div className="text-sm text-gray-600">
+          <div className="text-xs sm:text-sm text-gray-600">
             {subtitle}
           </div>
         )}
       </div>
       
       {comment && (
-        <div className="text-sm text-gray-700 leading-relaxed">
+        <div className="text-sm sm:text-base text-gray-700 leading-relaxed">
           {comment}
         </div>
       )}

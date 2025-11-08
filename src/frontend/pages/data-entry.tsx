@@ -302,16 +302,16 @@ const DataEntry: React.FC = () => {
       <div className="relative z-10">
         <Navbar showUserControls={true} />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <span className="text-4xl mr-3">{user.avatar || '💪'}</span>
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-2 sm:space-y-0">
+            <span className="text-3xl sm:text-4xl sm:mr-3">{user.avatar || '💪'}</span>
             <div>
-              <h1 className="text-3xl font-bold text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold text-white">
                 Track Your Student Progress, {user.nickname || user.name}! 📊
               </h1>
-              <p className="text-lg text-gray-200 mt-1">
+              <p className="text-base sm:text-lg text-gray-200 mt-1">
                 Log your daily student activities to get personalized study insights
               </p>
             </div>
@@ -319,37 +319,37 @@ const DataEntry: React.FC = () => {
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-lg p-1 shadow-sm">
+        <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
+          <div className="bg-white rounded-lg p-1 shadow-sm inline-flex min-w-full sm:min-w-0">
             <button
               onClick={() => setActiveSection('food')}
-              className={`px-6 py-3 rounded-md font-medium transition-colors ${
+              className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap ${
                 activeSection === 'food'
                   ? 'bg-blue-500 text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              🍽️ Student Meals {foodList.length > 0 && <span className="text-green-300">✓</span>}
+              🍽️ Meals {foodList.length > 0 && <span className="text-green-300">✓</span>}
             </button>
             <button
               onClick={() => setActiveSection('exercise')}
-              className={`px-6 py-3 rounded-md font-medium transition-colors ${
+              className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap ${
                 activeSection === 'exercise'
                   ? 'bg-green-500 text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              🏃 Student Activity {exerciseList.length > 0 && <span className="text-green-300">✓</span>}
+              🏃 Activity {exerciseList.length > 0 && <span className="text-green-300">✓</span>}
             </button>
             <button
               onClick={() => setActiveSection('lifestyle')}
-              className={`px-6 py-3 rounded-md font-medium transition-colors ${
+              className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 sm:py-3 rounded-md font-medium transition-colors text-sm sm:text-base whitespace-nowrap ${
                 activeSection === 'lifestyle'
                   ? 'bg-purple-500 text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              😴 Student Lifestyle {lifestyleData.sleep_hours > 0 && <span className="text-green-300">✓</span>}
+              😴 Lifestyle {lifestyleData.sleep_hours > 0 && <span className="text-green-300">✓</span>}
             </button>
           </div>
         </div>
@@ -697,31 +697,31 @@ const DataEntry: React.FC = () => {
         )}
 
         {/* Progress Indicator */}
-        <div className="mt-8 mb-6">
+        <div className="mt-6 sm:mt-8 mb-4 sm:mb-6">
           <div className="card max-w-2xl mx-auto">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 text-center">
               Data Completion Status
             </h3>
-            <div className="grid grid-cols-3 gap-4">
-              <div className={`text-center p-3 rounded-lg ${foodList.length > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
-                <div className="text-2xl mb-1">🍽️</div>
-                <div className="text-sm font-medium">Food</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4">
+              <div className={`text-center p-2 sm:p-3 rounded-lg ${foodList.length > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
+                <div className="text-xl sm:text-2xl mb-1">🍽️</div>
+                <div className="text-xs sm:text-sm font-medium">Food</div>
                 <div className="text-xs">{foodList.length > 0 ? `${foodList.length} items` : 'No data'}</div>
               </div>
-              <div className={`text-center p-3 rounded-lg ${exerciseList.length > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
-                <div className="text-2xl mb-1">🏃</div>
-                <div className="text-sm font-medium">Exercise</div>
+              <div className={`text-center p-2 sm:p-3 rounded-lg ${exerciseList.length > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
+                <div className="text-xl sm:text-2xl mb-1">🏃</div>
+                <div className="text-xs sm:text-sm font-medium">Exercise</div>
                 <div className="text-xs">{exerciseList.length > 0 ? `${exerciseList.length} activities` : 'No data'}</div>
               </div>
-              <div className={`text-center p-3 rounded-lg ${lifestyleData.sleep_hours > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
-                <div className="text-2xl mb-1">😴</div>
-                <div className="text-sm font-medium">Lifestyle</div>
+              <div className={`text-center p-2 sm:p-3 rounded-lg ${lifestyleData.sleep_hours > 0 ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-500'}`}>
+                <div className="text-xl sm:text-2xl mb-1">😴</div>
+                <div className="text-xs sm:text-sm font-medium">Lifestyle</div>
                 <div className="text-xs">{lifestyleData.sleep_hours > 0 ? 'Complete' : 'Incomplete'}</div>
               </div>
             </div>
             {!isAllDataComplete() && (
-              <div className="mt-4 text-center">
-                <p className="text-sm text-gray-600">
+              <div className="mt-3 sm:mt-4 text-center">
+                <p className="text-xs sm:text-sm text-gray-600">
                   Complete all three sections to enable AI analysis
                 </p>
               </div>
@@ -730,10 +730,10 @@ const DataEntry: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-center space-x-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pb-6">
           <button
             onClick={() => router.push('/goal-homepage')}
-            className="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors font-medium"
+            className="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto order-2 sm:order-1"
           >
             ← Back to Goals
           </button>
@@ -741,10 +741,10 @@ const DataEntry: React.FC = () => {
           <button
             onClick={runAIAnalysis}
             disabled={isLoading || !isAllDataComplete()}
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm sm:text-base w-full sm:w-auto order-1 sm:order-2"
           >
             {isLoading ? (
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
                 Analyzing...
               </div>

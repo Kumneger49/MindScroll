@@ -96,12 +96,12 @@ const AgentOutput: React.FC<AgentOutputProps> = ({ agent, data }) => {
 
   return (
     <div className={`card ${config.bgColor} ${config.borderColor} border animate-slide-up`}>
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2">
         <div className="flex items-center">
-          <span className="text-2xl mr-3">{config.icon}</span>
-          <h3 className={`text-lg font-semibold ${config.textColor}`}>{config.title}</h3>
+          <span className="text-xl sm:text-2xl mr-2 sm:mr-3">{config.icon}</span>
+          <h3 className={`text-base sm:text-lg font-semibold ${config.textColor}`}>{config.title}</h3>
         </div>
-        <div className={`px-2 py-1 rounded-full text-xs font-medium ${
+        <div className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
           config.performanceColor === 'green' ? 'bg-green-100 text-green-800' :
           config.performanceColor === 'yellow' ? 'bg-yellow-100 text-yellow-800' :
           'bg-red-100 text-red-800'
@@ -111,18 +111,18 @@ const AgentOutput: React.FC<AgentOutputProps> = ({ agent, data }) => {
         </div>
       </div>
       
-      <div className="space-y-3">
+      <div className="space-y-2 sm:space-y-3">
         {foodData && (
           <>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Calories</span>
-              <span className={`font-semibold ${config.textColor}`}>{foodData.calories}</span>
+              <span className="text-xs sm:text-sm text-gray-600">Calories</span>
+              <span className={`text-sm sm:text-base font-semibold ${config.textColor}`}>{foodData.calories}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Nutrition Score</span>
-              <span className={`font-semibold ${config.textColor}`}>{foodData.nutrition_score}/10</span>
+              <span className="text-xs sm:text-sm text-gray-600">Nutrition Score</span>
+              <span className={`text-sm sm:text-base font-semibold ${config.textColor}`}>{foodData.nutrition_score}/10</span>
             </div>
-            <div className="text-sm text-gray-700 bg-white/50 p-3 rounded-lg">
+            <div className="text-xs sm:text-sm text-gray-700 bg-white/50 p-2 sm:p-3 rounded-lg">
               {foodData.comment}
             </div>
           </>
@@ -131,10 +131,10 @@ const AgentOutput: React.FC<AgentOutputProps> = ({ agent, data }) => {
         {exerciseData && (
           <>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Calories Burned</span>
-              <span className={`font-semibold ${config.textColor}`}>{exerciseData.calories_burned}</span>
+              <span className="text-xs sm:text-sm text-gray-600">Calories Burned</span>
+              <span className={`text-sm sm:text-base font-semibold ${config.textColor}`}>{exerciseData.calories_burned}</span>
             </div>
-            <div className="text-sm text-gray-700 bg-white/50 p-3 rounded-lg">
+            <div className="text-xs sm:text-sm text-gray-700 bg-white/50 p-2 sm:p-3 rounded-lg">
               {exerciseData.note}
             </div>
           </>
@@ -143,10 +143,10 @@ const AgentOutput: React.FC<AgentOutputProps> = ({ agent, data }) => {
         {lifestyleData && (
           <>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Wellness Score</span>
-              <span className={`font-semibold ${config.textColor}`}>{lifestyleData.wellness_score}/10</span>
+              <span className="text-xs sm:text-sm text-gray-600">Wellness Score</span>
+              <span className={`text-sm sm:text-base font-semibold ${config.textColor}`}>{lifestyleData.wellness_score}/10</span>
             </div>
-            <div className="text-sm text-gray-700 bg-white/50 p-3 rounded-lg">
+            <div className="text-xs sm:text-sm text-gray-700 bg-white/50 p-2 sm:p-3 rounded-lg">
               {lifestyleData.advice}
             </div>
           </>

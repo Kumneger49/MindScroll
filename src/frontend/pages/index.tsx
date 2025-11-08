@@ -37,21 +37,21 @@ const Home: React.FC = () => {
     <div className="min-h-screen gradient-bg">
       <Navbar title="Mindscroll" showUserControls={!!user} />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="text-center">
-          <div className="mb-8">
-            <div className="flex items-center justify-center mb-4">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-3 sm:space-y-0">
               <img 
                 src="/data/Logo.jpg" 
                 alt="Mindscroll Logo" 
-                className="h-16 w-auto mr-4"
+                className="h-12 sm:h-16 w-auto sm:mr-4"
               />
-              <h1 className="text-5xl font-bold text-gray-900">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
                 Welcome to{' '}
                 <span className="text-gradient">Mindscroll</span>
               </h1>
             </div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2">
               Your AI-powered study companion that helps students balance health, learning, and personal growth 
               with personalized daily insights and educational content.
             </p>
@@ -60,27 +60,27 @@ const Home: React.FC = () => {
 
           {user ? (
             <div className="card max-w-md mx-auto">
-              <div className="flex items-center mb-4">
-                <span className="text-4xl mr-3">{user.avatar || '🎓'}</span>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4 text-center sm:text-left">
+                <span className="text-4xl sm:mr-3 mb-2 sm:mb-0">{user.avatar || '🎓'}</span>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
                     Welcome back, {user.nickname || user.name}! 👋
                   </h2>
                   {user.nickname && (
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 mt-1">
                       {user.name} • The {user.nickname}
                     </p>
                   )}
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">
+              <p className="text-sm sm:text-base text-gray-600 mb-6">
                 Ready to continue your student journey? Choose between health tracking for student life or intellectual exploration for your studies.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <button
                   onClick={() => router.push('/path-selection')}
-                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 sm:px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 text-sm sm:text-base"
                 >
                   🎯 Choose Your Path
                 </button>
@@ -88,31 +88,31 @@ const Home: React.FC = () => {
             </div>
           ) : (
             <div className="card max-w-md mx-auto">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
                 Start Your Student Journey
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-sm sm:text-base text-gray-600 mb-6">
                 Create an account to get your personalized AI-generated study and health goals, plus access to educational content tailored for students.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <button
                   onClick={() => router.push('/signup')}
-                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 sm:px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 text-sm sm:text-base"
                 >
                   🎓 Create Student Account
                 </button>
                 
                 <button
                   onClick={() => router.push('/intellectual')}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 px-4 sm:px-6 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-sm sm:text-base"
                 >
                   📚 Explore Study Path
                 </button>
                 
                 <button
                   onClick={() => router.push('/login')}
-                  className="w-full bg-gray-200 text-gray-700 font-medium py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors"
+                  className="w-full bg-gray-200 text-gray-700 font-medium py-2 px-4 sm:px-6 rounded-lg hover:bg-gray-300 transition-colors text-sm sm:text-base"
                 >
                   Sign In
                 </button>
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
             </div>
           )}
 
-          <div className="mt-12 text-sm text-gray-500">
+          <div className="mt-8 sm:mt-12 text-xs sm:text-sm text-gray-500">
             <p>Powered by AI • Privacy-focused • Real-time insights</p>
           </div>
         </div>

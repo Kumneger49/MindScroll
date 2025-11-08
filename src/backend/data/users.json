@@ -1879,5 +1879,60 @@
     "is_active": true,
     "created_at": "2025-10-15 13:15:41.105819",
     "updated_at": "2025-10-15 13:15:41.105819"
+  },
+  "20fdf2ae-b8e8-4781-887d-60454003ae6d": {
+    "id": "20fdf2ae-b8e8-4781-887d-60454003ae6d",
+    "credentials": {
+      "email": "mohammedtomaizeh21@gmail.com",
+      "password": "123456789",
+      "created_at": "2025-11-08 10:11:29.221954"
+    },
+    "profile": {
+      "name": "mohammed ",
+      "age": 25,
+      "gender": "male",
+      "weight": 70.0,
+      "height": 170.0,
+      "activity_level": "moderately_active",
+      "medical_conditions": [],
+      "dietary_restrictions": [],
+      "nickname": "Health Hero",
+      "avatar": "\u2764\ufe0f",
+      "primary_health_goal": "lose_weight",
+      "motivation": "general_health",
+      "lifestyle_vision": "balanced_lifestyle",
+      "intellectual_interests": [
+        "Technology",
+        "Literature",
+        "Mathematics"
+      ],
+      "learning_style": "visual",
+      "time_availability": "moderate",
+      "created_at": "2025-11-08 10:11:29.224588"
+    },
+    "goal": {
+      "goal_type": "general_health",
+      "target_weight": 70.0,
+      "target_muscle_mass": null,
+      "target_calories_per_day": 2200,
+      "target_protein_per_day": 112.0,
+      "target_exercise_minutes_per_week": 250,
+      "target_sleep_hours": 8.0,
+      "target_screen_time_hours": 6.0,
+      "target_stress_level": 5.0,
+      "goal_description": "Personalized health goal based on your profile: general_health",
+      "ai_generated": true,
+      "created_at": "2025-11-08 10:11:29.227677"
+    },
+    "progress": {
+      "user_id": "20fdf2ae-b8e8-4781-887d-60454003ae6d",
+      "entries": [],
+      "current_streak": 0,
+      "total_entries": 0,
+      "last_entry_date": null
+    },
+    "is_active": true,
+    "created_at": "2025-11-08 10:11:29.229870",
+    "updated_at": "2025-11-08 10:11:29.229872"
   }
 }

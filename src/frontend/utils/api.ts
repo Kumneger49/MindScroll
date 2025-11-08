@@ -18,6 +18,7 @@ export interface OrchestratorSummary {
   overall_health_score: number;
   summary: string;
   recommendations: string[];
+  motivation?: string;
 }
 
 export interface DailySummary {
@@ -25,6 +26,10 @@ export interface DailySummary {
   exercise_agent: ExerciseAgentOutput;
   lifestyle_agent: LifestyleAgentOutput;
   orchestrator_summary: OrchestratorSummary;
+  food_agent_summary?: { summary: string; score: number; recommendations: string[] };
+  exercise_agent_summary?: { summary: string; score: number; recommendations: string[] };
+  lifestyle_agent_summary?: { summary: string; score: number; recommendations: string[] };
+  goal_alignment?: string;
 }
 
 export async function fetchSummary(): Promise<DailySummary> {

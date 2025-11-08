@@ -159,28 +159,28 @@ const EssentialSignup: React.FC = () => {
   return (
     <div className="min-h-screen gradient-bg">
       <Navbar />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-2 sm:space-y-0">
             <img 
               src="/data/Logo.jpg" 
               alt="Mindscroll Logo" 
-              className="h-12 w-auto mr-3"
+              className="h-10 sm:h-12 w-auto sm:mr-3"
             />
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Join Mindscroll for Students
             </h1>
           </div>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 px-2">
             Get personalized study and health goals powered by AI for your student journey
           </p>
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex items-center justify-center">
-            <div className="flex items-center space-x-4">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex items-center justify-center overflow-x-auto px-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {Array.from({ length: totalSteps }, (_, i) => (
                 <div key={i} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
@@ -191,7 +191,7 @@ const EssentialSignup: React.FC = () => {
                     {i + 1}
                   </div>
                   {i < totalSteps - 1 && (
-                    <div className={`w-12 h-1 mx-2 ${
+                    <div className={`w-8 sm:w-12 h-1 mx-1 sm:mx-2 ${
                       i + 1 < currentStep ? 'bg-blue-500' : 'bg-gray-200'
                     }`} />
                   )}
@@ -199,7 +199,7 @@ const EssentialSignup: React.FC = () => {
               ))}
             </div>
           </div>
-          <p className="text-center text-sm text-gray-600 mt-2">
+          <p className="text-center text-xs sm:text-sm text-gray-600 mt-2">
             Step {currentStep} of {totalSteps}
           </p>
         </div>
@@ -448,12 +448,12 @@ const EssentialSignup: React.FC = () => {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between pt-6">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 pt-6">
               <button
                 type="button"
                 onClick={prevStep}
                 disabled={currentStep === 1}
-                className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base order-2 sm:order-1"
               >
                 ← Previous
               </button>
@@ -462,7 +462,7 @@ const EssentialSignup: React.FC = () => {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
+                  className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-sm sm:text-base order-1 sm:order-2"
                 >
                   Next →
                 </button>
@@ -470,7 +470,7 @@ const EssentialSignup: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading || formData.intellectual_interests.length < 3}
-                  className="px-8 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 sm:px-8 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base order-1 sm:order-2"
                 >
                   {isLoading ? 'Creating Account...' : 'Create Account & Get AI Goals'}
                 </button>
@@ -478,15 +478,15 @@ const EssentialSignup: React.FC = () => {
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm sm:text-base">
                 {error}
               </div>
             )}
           </form>
         </div>
 
-        <div className="text-center mt-6">
-          <p className="text-gray-600">
+        <div className="text-center mt-4 sm:mt-6">
+          <p className="text-sm sm:text-base text-gray-600">
             Already have an account?{' '}
             <button
               onClick={() => router.push('/login')}
